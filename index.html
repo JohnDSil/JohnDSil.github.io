@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Game Boy Pro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Catálogo Game Boy</h1>
+    
+    <!-- Buscador y controles -->
+    <div class="controles">
+        <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador...">
+        <select id="filas-pagina">
+            <option value="5">5 por página</option>
+            <option value="10" selected>10 por página</option>
+            <option value="20">20 por página</option>
+            <option value="0">Todos</option>
+        </select>
+    </div>
+
+    <!-- Tabla principal -->
+    <table id="tabla-juegos">
+        <thead><!-- Mantener misma estructura --></thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Paginación -->
+    <nav id="paginacion">
+        <button id="prev">&laquo; Anterior</button>
+        <span id="contador-pagina">Página 1 de 1</span>
+        <button id="next">Siguiente &raquo;</button>
+    </nav>
+
+    <script src="script.js"></script>
+
+    <!-- Añadir antes del cierre </body> -->
+<div class="decoracion-retro">
+    <div class="pixel-art"></div>
+    <div class="neon-effect"></div>
+</div>
+
+</body>
+</html>
