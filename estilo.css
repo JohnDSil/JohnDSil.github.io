@@ -1,0 +1,194 @@
+/* Centrado principal */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal centrado */
+.contenedor-central {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Mantener todos los efectos neon originales */
+:root {
+    --neon-pink: #ff00ff;
+    --electric-blue: #00ffff;
+    --lime-green: #39ff14;
+    --sunset-orange: #ff5e1a;
+    --deep-purple: #6a0dad;
+}
+
+h1 {
+    background: linear-gradient(45deg, var(--neon-pink), var(--electric-blue));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--electric-blue);
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Tabla con efectos mejorados */
+#tabla-juegos {
+    width: 100%;
+    background: #000;
+    border: 3px solid var(--lime-green);
+    box-shadow: 0 0 20px var(--lime-green);
+    margin: 20px auto;
+}
+
+th {
+    background: var(--deep-purple);
+    color: var(--lime-green);
+    text-shadow: 0 0 5px #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+td {
+    color: var(--electric-blue);
+    border-color: var(--neon-pink);
+    padding: 12px;
+    text-align: center;
+    position: relative;
+}
+
+tr:hover {
+    background: rgba(255, 0, 255, 0.1) !important;
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* Efectos especiales mejorados */
+.decoracion-retro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.pixel-art {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 19px,
+            rgba(255, 0, 255, 0.05) 20px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.03),
+            rgba(0, 255, 255, 0.03) 19px,
+            transparent 20px
+        );
+    animation: scanlines 1s infinite linear;
+}
+
+.neon-effect {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(0, 255, 255, 0.1),
+        transparent 30%
+    );
+    animation: glow 3s alternate infinite;
+}
+
+@keyframes scanlines {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Controles centrados con efectos mejorados */
+.controles {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+#buscador {
+    flex: 1 1 300px;
+    max-width: 500px;
+    background: #000 !important;
+    color: var(--electric-blue) !important;
+    border: 2px solid var(--lime-green) !important;
+    text-shadow: 0 0 5px #fff;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#filas-pagina {
+    background: var(--deep-purple) !important;
+    color: var(--lime-green) !important;
+    border: 2px solid var(--neon-pink) !important;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Paginación centrada con efectos */
+#paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(102, 0, 153, 0.2);
+    border-radius: 5px;
+}
+
+#paginacion button {
+    background: var(--deep-purple) !important;
+    color: var(--lime-green) !important;
+    border: 2px solid var(--neon-pink) !important;
+    padding: 10px 20px;
+    min-width: 100px;
+    text-shadow: 0 0 5px var(--electric-blue);
+    transition: all 0.3s ease;
+}
+
+#paginacion button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* Efectos de hover para celdas */
+td:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 10px var(--neon-pink);
+    pointer-events: none;
+}
