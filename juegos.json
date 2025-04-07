@@ -1,0 +1,70 @@
+{
+    "juegos": [
+        {
+            "id": 1,
+            "titulo": "Super Mario Land",
+            "anio": 1989,
+            "genero": "Plataformas",
+            "idioma": "Multi/ES",
+            "desarrollador": "Nintendo"
+        },
+        {
+            "id": 2,
+            "titulo": "The Legend of Zelda: Link's Awakening DX",
+            "anio": 1998,
+            "genero": "Aventura",
+            "idioma": "Multi/ES",
+            "desarrollador": "Nintendo"
+        },
+        {
+            "id": 3,
+            "titulo": "Castlevania Legends",
+            "anio": 1997,
+            "genero": "Acción",
+            "idioma": "Multi/ES",
+            "desarrollador": "Konami"
+        },
+        {
+            "id": 4,
+            "titulo": "Kirby's Dream Land 2",
+            "anio": 1995,
+            "genero": "Plataformas",
+            "idioma": "Multi/ES",
+            "desarrollador": "Nintendo"
+        },
+        {
+            "id": 5,
+            "titulo": "Pokémon Trading Card Game",
+            "anio": 2000,
+            "genero": "Cartas",
+            "idioma": "ES",
+            "desarrollador": "Hudson Soft"
+        },
+        {
+            "id": 6,
+            "titulo": "Alleyway",
+            "anio": 1989,
+            "genero": "Arcade",
+            "idioma": "ES",
+            "desarrollador": "Nintendo"
+        },
+        {
+            "id": 7,
+            "titulo": "Mario's Picross",
+            "anio": 1995,
+            "genero": "Puzles",
+            "idioma": "Multi/ES",
+            "desarrollador": "Nintendo"
+        },
+
+        {
+            "id": 8,
+            "titulo": "Metroid II - Return of Samus",
+            "anio": 1991,
+            "genero": "Acción-Aventura",
+            "idioma": "Multi/ES",
+            "desarrollador": "Nintendo"
+        }
+
+    ]
+}
