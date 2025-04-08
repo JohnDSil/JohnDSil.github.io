@@ -2,45 +2,201 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-   <img src="img/gb.png" alt="Game Boy Logo" style="width: 300px; height: auto;">
-    <title>Game Boy Games </title>
+    <title>Game Boy Games</title>
     <link rel="stylesheet" href="estilo.css">
-    
+    <style>
+        #ficha-juego {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid var(--neon-pink);
+            background-color: #000;
+            color: var(--electric-blue);
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+    </style>
 </head>
 <body>
-    
-    
-    <!-- Buscador y controles -->
-    <div class="controles">
-        <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador...">
-        <select id="filas-pagina">
-            <option value="5">5 por página</option>
-            <option value="10" selected>10 por página</option>
-            <option value="20">20 por página</option>
-            <option value="0">Todos</option>
-        </select>
+    <div class="contenedor-central">
+        <header>
+            <img src="img/gb.png" alt="Game Boy Logo" style="width: 300px; height: auto;">
+        </header>
+
+        <!-- Buscador y controles -->
+        <div class="controles">
+            <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador...">
+            <select id="filas-pagina">
+                <option value="5">5 por página</option>
+                <option value="10" selected>10 por página</option>
+                <option value="20">20 por página</option>
+                <option value="0">Todos</option>
+            </select>
+        </div>
+
+        <!-- Tabla principal -->
+        <table id="tabla-juegos">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Contenedor para la ficha del juego -->
+        <div id="ficha-juego">
+            <h2></h2>
+            <p><strong>Año:</strong> <span id="ficha-anio"></span></p>
+            <p><strong>Género:</strong> <span id="ficha-genero"></span></p>
+            <p><strong>Idioma:</strong> <span id="ficha-idioma"></span></p>
+            <p><strong>Desarrollador:</strong> <span id="ficha-desarrollador"></span></p>
+        </div>
+
+        <!-- Paginación -->
+        <nav id="paginacion">
+            <button id="prev">&laquo; Anterior</button>
+            <span id="contador-pagina">Página 1 de 1</span>
+            <button id="next">Siguiente &raquo;</button>
+        </nav>
     </div>
 
-    <!-- Tabla principal -->
-    <table id="tabla-juegos">
-        <thead><!-- Mantener misma estructura --></thead>
-        <tbody></tbody>
-    </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let juegosOriginales = [];
+            let juegosFiltrados = [];
+            let paginaActual = 1;
+            let filasPorPagina = 10;
 
-    <!-- Paginación -->
-    <nav id="paginacion">
-        <button id="prev">&laquo; Anterior</button>
-        <span id="contador-pagina">Página 1 de 1</span>
-        <button id="next">Siguiente &raquo;</button>
-    </nav>
+            const elementos = {
+                tabla: document.querySelector('#tabla-juegos tbody'),
+                buscador: document.getElementById('buscador'),
+                filasPagina: document.getElementById('filas-pagina'),
+                paginacion: document.getElementById('paginacion'),
+                prevBtn: document.getElementById('prev'),
+                nextBtn: document.getElementById('next'),
+                contador: document.getElementById('contador-pagina')
+            };
 
-    <script src="script.js"></script>
+            // Cargar datos iniciales
+            fetch('juegos.json')
+                .then(response => response.json())
+                .then(data => {
+                    juegosOriginales = data.juegos;
+                    juegosFiltrados = [...juegosOriginales];
+                    renderTabla();
+                })
+                .catch(error => console.error('Error al cargar el JSON:', error));
+
+            // Sistema de búsqueda
+            elementos.buscador.addEventListener('input', () => {
+                paginaActual = 1;
+                filtrarJuegos();
+                renderTabla();
+            });
+
+            // Cambiar número de filas
+            elementos.filasPagina.addEventListener('change', (e) => {
+                filasPorPagina = parseInt(e.target.value);
+                paginaActual = 1;
+                renderTabla();
+            });
+
+            // Paginación
+            elementos.prevBtn.addEventListener('click', () => {
+                if(paginaActual > 1) {
+                    paginaActual--;
+                    renderTabla();
+                }
+            });
+
+            elementos.nextBtn.addEventListener('click', () => {
+                if(paginaActual < totalPaginas()) {
+                    paginaActual++;
+                    renderTabla();
+                }
+            });
+
+            // Funciones principales
+            function filtrarJuegos() {
+                const termino = elementos.buscador.value.toLowerCase();
+                juegosFiltrados = juegosOriginales.filter(juego => {
+                    return Object.values(juego).some(valor => 
+                        String(valor).toLowerCase().includes(termino)
+                    );
+                });
+            }
+
+            function renderTabla() {
+                elementos.tabla.innerHTML = '';
+                
+                const inicio = (paginaActual - 1) * filasPorPagina;
+                const fin = filasPorPagina === 0 ? juegosFiltrados.length : inicio + filasPorPagina;
+                const paginados = juegosFiltrados.slice(inicio, fin);
+
+                paginados.forEach(juego => {
+                    const fila = elementos.tabla.insertRow();
+                    fila.style.cursor = 'pointer';
+
+                    const celdaTitulo = fila.insertCell();
+                    celdaTitulo.textContent = juego.titulo;
+
+                    fila.addEventListener('click', () => {
+                        mostrarFichaJuego(juego);
+                    });
+                });
+
+                actualizarPaginacion();
+                aplicarEfectosEspeciales();
+            }
+
+            function actualizarPaginacion() {
+                const totalPag = totalPaginas();
+                elementos.contador.textContent = `Página ${paginaActual} de ${totalPag}`;
+
+                elementos.prevBtn.disabled = paginaActual === 1;
+                elementos.nextBtn.disabled = paginaActual === totalPag;
+
+                elementos.paginacion.style.display = filasPorPagina === 0 ? 'none' : 'flex';
+            }
+
+            function totalPaginas() {
+                return filasPorPagina === 0 ? 1 : Math.ceil(juegosFiltrados.length / filasPorPagina);
+            }
+
+            function aplicarEfectosEspeciales() {
+                const celdas = document.querySelectorAll('#tabla-juegos tbody td');
+            
+                celdas.forEach(celda => {
+                    celda.addEventListener('mouseenter', () => {
+                        celda.style.transition = 'all 0.3s ease';
+                        celda.style.transform = 'scale(1.05)';
+                        celda.style.boxShadow = '0 0 15px var(--neon-pink)';
+                    });
+                    
+                    celda.addEventListener('mouseleave', () => {
+                        celda.style.transform = 'scale(1)';
+                        celda.style.boxShadow = 'none';
+                    });
+                });
+            }
+
+            function mostrarFichaJuego(juego) {
+                const fichaJuego = document.getElementById('ficha-juego');
+                fichaJuego.style.display = 'block';
+
+                fichaJuego.querySelector('h2').textContent = juego.titulo;
+                document.getElementById('ficha-anio').textContent = juego.anio;
+                document.getElementById('ficha-genero').textContent = juego.genero;
+                document.getElementById('ficha-idioma').textContent = juego.idioma;
+                document.getElementById('ficha-desarrollador').textContent = juego.desarrollador;
+            }
+        });
+    </script>
 
     <!-- Añadir antes del cierre </body> -->
-<div class="decoracion-retro">
-    <div class="pixel-art"></div>
-    <div class="neon-effect"></div>
-</div>
-
+    <div class="decoracion-retro">
+        <div class="pixel-art"></div>
+        <div class="neon-effect"></div>
+    </div>
 </body>
 </html>
