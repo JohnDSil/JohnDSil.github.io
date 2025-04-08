@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             juegosOriginales = data.juegos;
             juegosFiltrados = [...juegosOriginales];
             renderTabla();
-        });
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
 
     // Sistema de búsqueda
     elementos.buscador.addEventListener('input', () => {
@@ -66,19 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
         elementos.tabla.innerHTML = '';
         
         const inicio = (paginaActual - 1) * filasPorPagina;
-        const fin = inicio + filasPorPagina;
+        const fin = filasPorPagina === 0 ? juegosFiltrados.length : inicio + filasPorPagina; // Mostrar todos si filasPorPagina es 0
         const paginados = juegosFiltrados.slice(inicio, fin);
 
         paginados.forEach(juego => {
             const fila = elementos.tabla.insertRow();
             
-            Object.values(juego).forEach(valor => {
+            const valores = Object.values(juego);
+            for (let i = 1; i < valores.length; i++) { // Comenzar desde el segundo valor (omitiendo el ID)
                 const celda = fila.insertCell();
-                celda.textContent = valor;
-            });
+                celda.textContent = valores[i];
+            }
         });
 
         actualizarPaginacion();
+        aplicarEfectosEspeciales(); // Llamar después de renderizar la tabla
     }
 
     function actualizarPaginacion() {
@@ -98,26 +101,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return filasPorPagina === 0 ? 1 : Math.ceil(juegosFiltrados.length / filasPorPagina);
     }
 
-});
-
-function aplicarEfectosEspeciales() {
-    const celdas = document.querySelectorAll('td');
+    function aplicarEfectosEspeciales() {
+        const celdas = document.querySelectorAll('#tabla-juegos tbody td');
     
-    celdas.forEach(celda => {
-        celda.addEventListener('mouseenter', () => {
-            celda.style.transition = 'all 0.3s ease';
-            celda.style.transform = 'scale(1.05)';
-            celda.style.boxShadow = '0 0 15px var(--neon-pink)';
+        celdas.forEach(celda => {
+            celda.addEventListener('mouseenter', () => {
+                celda.style.transition = 'all 0.3s ease';
+                celda.style.transform = 'scale(1.05)';
+                celda.style.boxShadow = '0 0 15px var(--neon-pink)';
+            });
+            
+            celda.addEventListener('mouseleave', () => {
+                celda.style.transform = 'scale(1)';
+                celda.style.boxShadow = 'none';
+            });
         });
-        
-        celda.addEventListener('mouseleave', () => {
-            celda.style.transform = 'scale(1)';
-            celda.style.boxShadow = 'none';
-        });
-    });
-}
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Llamar después de renderizar la tabla
-    aplicarEfectosEspeciales();
 });
