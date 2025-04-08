@@ -1,5 +1,6 @@
 /* Centrado principal */
-html, body {
+
+, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -25,6 +26,14 @@ body {
     padding: 20px;
     position: relative;
     z-index: 1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
 /* Mantener todos los efectos neon originales */
@@ -192,3 +201,4 @@ td:hover::after {
     box-shadow: inset 0 0 10px var(--neon-pink);
     pointer-events: none;
 }
+
