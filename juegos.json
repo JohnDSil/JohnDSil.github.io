@@ -1,468 +1,527 @@
 {
-    "juegos": [
-        {
-            "id": 1,
-            "titulo": "Super Mario Land",
-            "anio": 1989,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 2,
-            "titulo": "The Legend of Zelda: Link's Awakening DX",
-            "anio": 1998,
-            "genero": "Aventura",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 3,
-            "titulo": "Castlevania Legends",
-            "anio": 1997,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 4,
-            "titulo": "Kirby's Dream Land 2",
-            "anio": 1995,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 5,
-            "titulo": "Pokémon Trading Card Game",
-            "anio": 2000,
-            "genero": "Cartas",
-            "idioma": "ES",
-            "desarrollador": "Hudson Soft"
-        },
-        {
-            "id": 6,
-            "titulo": "Alleyway",
-            "anio": 1989,
-            "genero": "Arcade",
-            "idioma": "ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 7,
-            "titulo": "Mario's Picross",
-            "anio": 1995,
-            "genero": "Puzles",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 8,
-            "titulo": "Metroid II - Return of Samus",
-            "anio": 1991,
-            "genero": "Acción-Aventura",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 9,
-            "titulo": "Tetris",
-            "anio": 1989,
-            "genero": "Puzles",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 10,
-            "titulo": "Dr. Mario",
-            "anio": 1990,
-            "genero": "Puzles",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 11,
-            "titulo": "Kirby's Dream Land",
-            "anio": 1992,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 12,
-            "titulo": "Pokémon Rojo",
-            "anio": 1996,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Game Freak"
-        },
-        {
-            "id": 13,
-            "titulo": "Pokémon Azul",
-            "anio": 1996,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Game Freak"
-        },
-        {
-            "id": 14,
-            "titulo": "Donkey Kong",
-            "anio": 1994,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 15,
-            "titulo": "Wario Land II",
-            "anio": 1998,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 16,
-            "titulo": "Wario Land: Super Mario Land 3",
-            "anio": 1994,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Nintendo"
-        },
-        {
-            "id": 17,
-            "titulo": "Kid Dracula",
-            "anio": 1993,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 18,
-            "titulo": "Castlevania II: Belmont's Revenge",
-            "anio": 1991,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 19,
-            "titulo": "Castlevania: The Adventure",
-            "anio": 1989,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 20,
-            "titulo": "Mega Man: Dr. Wily's Revenge",
-            "anio": 1991,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 21,
-            "titulo": "Mega Man II",
-            "anio": 1992,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 22,
-            "titulo": "Mega Man III",
-            "anio": 1992,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 23,
-            "titulo": "Mega Man IV",
-            "anio": 1993,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 24,
-            "titulo": "Mega Man V",
-            "anio": 1994,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 25,
-            "titulo": "TaleSpin",
-            "anio": 1992,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 26,
-            "titulo": "DuckTales",
-            "anio": 1990,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 27,
-            "titulo": "DuckTales 2",
-            "anio": 1993,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 28,
-            "titulo": "Chip 'n Dale: Rescue Rangers",
-            "anio": 1990,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 29,
-            "titulo": "Darkwing Duck",
-            "anio": 1993,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 30,
-            "titulo": "Gargoyle's Quest",
-            "anio": 1990,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 31,
-            "titulo": "Gargoyle's Quest II",
-            "anio": 1992,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 32,
-            "titulo": "Street Fighter II",
-            "anio": 1995,
-            "genero": "Lucha",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 33,
-            "titulo": "Final Fantasy Legend",
-            "anio": 1989,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 34,
-            "titulo": "Final Fantasy Legend II",
-            "anio": 1990,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 35,
-            "titulo": "Final Fantasy Legend III",
-            "anio": 1991,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 36,
-            "titulo": "SaGa",
-            "anio": 1989,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 37,
-            "titulo": "SaGa 2: Hihou Densetsu",
-            "anio": 1990,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 38,
-            "titulo": "SaGa 3: Jikuu no Hasha",
-            "anio": 1991,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 39,
-            "titulo": "The Final Fantasy Adventure",
-            "anio": 1991,
-            "genero": "Acción-RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 40,
-            "titulo": "Seiken Densetsu: Friends of Mana",
-            "anio": 1993,
-            "genero": "Acción-RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Square"
-        },
-        {
-            "id": 41,
-            "titulo": "Revelations: The Demon Slayer",
-            "anio": 1992,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Atlus"
-        },
-        {
-            "id": 42,
-            "titulo": "Shin Megami Tensei",
-            "anio": 1989,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Atlus"
-        },
-        {
-            "id": 43,
-            "titulo": "Shin Megami Tensei II",
-            "anio": 1990,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Atlus"
-        },
-        {
-            "id": 44,
-            "titulo": "Shin Megami Tensei: Devil Children",
-            "anio": 2002,
-            "genero": "RPG",
-            "idioma": "Multi/ES",
-            "desarrollador": "Atlus"
-        },
-        {
-            "id": 45,
-            "titulo": "Bionic Commando",
-            "anio": 1992,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Capcom"
-        },
-        {
-            "id": 46,
-            "titulo": "Contra",
-            "anio": 1991,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 47,
-            "titulo": "Operation C",
-            "anio": 1991,
-            "genero": "Acción",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 48,
-            "titulo": "Asterix",
-            "anio": 1993,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Infogrames"
-        },
-        {
-            "id": 49,
-            "titulo": "The Smurfs",
-            "anio": 1993,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Infogrames"
-        },
-        {
-            "id": 50,
-            "titulo": "The Smurfs 2",
-            "anio": 1995,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Infogrames"
-        },
-        {
-            "id": 51,
-            "titulo": "Tiny Toon Adventures: Babs' Big Break",
-            "anio": 1992,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 52,
-            "titulo": "Tiny Toon Adventures: Wacky Sports",
-            "anio": 1994,
-            "genero": "Deportes",
-            "idioma": "Multi/ES",
-            "desarrollador": "Konami"
-        },
-        {
-            "id": 53,
-            "titulo": "Bart Simpson's Escape from Camp Deadly",
-            "anio": 1991,
-            "genero": "Plataformas",
-            "idioma": "Multi/ES",
-            "desarrollador": "Acclaim"
-        },
-        {
-            "id": 54,
-            "titulo": "The Simpsons: Itchy & Scratchy in Miniature Golf Madness",
-            "anio": 1994,
-            "genero": "Golf",
-            "idioma": "Multi/ES",
-            "desarrollador": "Acclaim"
-        },
-        {
-            "id": 55,
-            "titulo": "Jeopardy!",
-            "anio": 1990,
-            "genero": "Trivia",
-            "idioma": "Multi/ES",
-            "desarrollador": "GameTek"
-        },
-        {
-            "id": 56,
-            "titulo": "Wheel of Fortune",
-            "anio": 1990,
-            "genero": "Trivia",
-            "idioma": "Multi/ES",
-            "desarrollador": "GameTek"
-        },
-        {
-            "id": 57,
-            "titulo": "F1 Racing",
-            "anio": 1990,
-            "genero": "Carreras",
-            "idioma": "Multi/ES",
-            "desarrollador": "Video System"
-        },
-        {
-            "id": 58,
-            "titulo": "R-Type",
-            "anio": 1991,
-            "genero": "Disparos",
-            "idioma": "Multi/ES",
-            "desarrollador": "Irem"
-        }
+  "juegos": [
+    {
+      "id": 1,
+      "titulo": "Super Mario Land",
+      "anio": 1989,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/super_mario_land.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "The Legend of Zelda: Link's Awakening DX",
+      "anio": 1998,
+      "genero": "Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/zelda_link_awakening_dx.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "Castlevania Legends",
+      "anio": 1997,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Konami",
+      "imagen": "img/castlevania_legends.jpg"
+    },
+    {
+      "id": 4,
+      "titulo": "Kirby's Dream Land 2",
+      "anio": 1995,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/kirby_dream_land_2.jpg"
+    },
+    {
+      "id": 5,
+      "titulo": "Pokémon Trading Card Game",
+      "anio": 2000,
+      "genero": "Cartas",
+      "idioma": "ES",
+      "desarrollador": "Hudson Soft",
+      "imagen": "img/pokemon_trading_card_game.jpg"
+    },
+    {
+      "id": 6,
+      "titulo": "Alleyway",
+      "anio": 1989,
+      "genero": "Arcade",
+      "idioma": "ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/alleyway.jpg"
+    },
+    {
+      "id": 7,
+      "titulo": "Mario's Picross",
+      "anio": 1995,
+      "genero": "Puzles",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/marios_picross.jpg"
+    },
+    {
+      "id": 8,
+      "titulo": "Metroid II - Return of Samus",
+      "anio": 1991,
+      "genero": "Acción-Aventura",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/metroid_ii_return_of_samus.jpg"
+    },
+    {
+      "id": 9,
+      "titulo": "Tetris",
+      "anio": 1989,
+      "genero": "Puzles",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/tetris.jpg"
+    },
+    {
+      "id": 10,
+      "titulo": "Dr. Mario",
+      "anio": 1990,
+      "genero": "Puzles",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/dr_mario.jpg"
+    },
+    {
+      "id": 11,
+      "titulo": "Kirby's Dream Land",
+      "anio": 1992,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/kirbys_dream_land.jpg"
+    },
+    {
+      "id": 12,
+      "titulo": "Pokémon Rojo",
+      "anio": 1996,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Game Freak",
+      "imagen": "img/pokemon_rojo.jpg"
+    },
+    {
+      "id": 13,
+      "titulo": "Pokémon Azul",
+      "anio": 1996,
+      "genero": "RPG",
+      "idioma": "Multi/ES",
+      "desarrollador": "Game Freak",
+      "imagen": "img/pokemon_azul.jpg"
+    },
+    {
+      "id": 14,
+      "titulo": "Donkey Kong",
+      "anio": 1994,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/donkey_kong.jpg"
+    },
+    {
+      "id": 15,
+      "titulo": "Wario Land II",
+      "anio": 1998,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/wario_land_ii.jpg"
+    },
+    {
+      "id": 16,
+      "titulo": "Wario Land: Super Mario Land 3",
+      "anio": 1994,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Nintendo",
+      "imagen": "img/wario_land_super_mario_land_3.jpg"
+    },
+    {
+      "id": 17,
+      "titulo": "Kid Dracula",
+      "anio": 1993,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Konami",
+      "imagen": "img/kid_dracula.jpg"
+    },
+    {
+      "id": 18,
+      "titulo": "Castlevania II: Belmont's Revenge",
+      "anio": 1991,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Konami",
+      "imagen": "img/castlevania_ii_belmonts_revenge.jpg"
+    },
+    {
+      "id": 19,
+      "titulo": "Castlevania: The Adventure",
+      "anio": 1989,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Konami",
+      "imagen": "img/castlevania_the_adventure.jpg"
+    },
+    {
+      "id": 20,
+      "titulo": "Mega Man: Dr. Wily's Revenge",
+      "anio": 1991,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/mega_man_dr_wilys_revenge.jpg"
+    },
+    {
+      "id": 21,
+      "titulo": "Mega Man II",
+      "anio": 1992,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/mega_man_ii.jpg"
+    },
+    {
+      "id": 22,
+      "titulo": "Mega Man III",
+      "anio": 1992,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/mega_man_iii.jpg"
+    },
+    {
+      "id": 23,
+      "titulo": "Mega Man IV",
+      "anio": 1993,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/mega_man_iv.jpg"
+    },
+    {
+      "id": 24,
+      "titulo": "Mega Man V",
+      "anio": 1994,
+      "genero": "Acción",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/mega_man_v.jpg"
+    },
+    {
+      "id": 25,
+      "titulo": "TaleSpin",
+      "anio": 1992,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/talespin.jpg"
+    },
+    {
+      "id": 26,
+      "titulo": "DuckTales",
+      "anio": 1990,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/ducktales.jpg"
+    },
+    {
+      "id": 27,
+      "titulo": "DuckTales 2",
+      "anio": 1993,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/ducktales_2.jpg"
+    },
+    {
+      "id": 28,
+      "titulo": "Chip 'n Dale: Rescue Rangers",
+      "anio": 1990,
+      "genero": "Plataformas",
+      "idioma": "Multi/ES",
+      "desarrollador": "Capcom",
+      "imagen": "img/chip_n_dale_rescue_rangers.jpg"
+    },
+   {
+        "id": 29,
+        "titulo": "Darkwing Duck",
+        "anio": 1993,
+        "genero": "Plataformas",
+        "idioma": "Multi/ES",
+        "desarrollador": "Capcom",
+        "imagen": "img/darkwing_duck.jpg"
+      },
+      {
+        "id": 30,
+        "titulo": "Gargoyle's Quest",
+        "anio": 1990,
+        "genero": "Acción",
+        "idioma": "Multi/ES",
+        "desarrollador": "Capcom",
+        "imagen": "img/gargoyles_quest.jpg"
+      },
+      {
+        "id": 31,
+        "titulo": "Gargoyle's Quest II",
+        "anio": 1992,
+        "genero": "Acción",
+        "idioma": "Multi/ES",
+        "desarrollador": "Capcom",
+        "imagen": "img/gargoyles_quest_ii.jpg"
+      },
+      {
+        "id": 32,
+        "titulo": "Street Fighter II",
+        "anio": 1995,
+        "genero": "Lucha",
+        "idioma": "Multi/ES",
+        "desarrollador": "Capcom",
+        "imagen": "img/street_fighter_ii.jpg"
+      },
+      {
+        "id": 33,
+        "titulo": "Final Fantasy Legend",
+        "anio": 1989,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/final_fantasy_legend.jpg"
+      },
+      {
+        "id": 34,
+        "titulo": "Final Fantasy Legend II",
+        "anio": 1990,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/final_fantasy_legend_ii.jpg"
+      },
+      {
+        "id": 35,
+        "titulo": "Final Fantasy Legend III",
+        "anio": 1991,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/final_fantasy_legend_iii.jpg"
+      },
+      {
+        "id": 36,
+        "titulo": "SaGa",
+        "anio": 1989,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/saga.jpg"
+      },
+      {
+        "id": 37,
+        "titulo": "SaGa 2: Hihou Densetsu",
+        "anio": 1990,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/saga_2_hihou_densetsu.jpg"
+      },
+      {
+        "id": 38,
+        "titulo": "SaGa 3: Jikuu no Hasha",
+        "anio": 1991,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/saga_3_jikuu_no_hasha.jpg"
+      },
+      {
+        "id": 39,
+        "titulo": "The Final Fantasy Adventure",
+        "anio": 1991,
+        "genero": "Acción-RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/the_final_fantasy_adventure.jpg"
+      },
+      {
+        "id": 40,
+        "titulo": "Seiken Densetsu: Friends of Mana",
+        "anio": 1993,
+        "genero": "Acción-RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Square",
+        "imagen": "img/seiken_densetsu_friends_of_mana.jpg"
+      },
+      {
+        "id": 41,
+        "titulo": "Revelations: The Demon Slayer",
+        "anio": 1992,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Atlus",
+        "imagen": "img/revelations_the_demon_slayer.jpg"
+      },
+      {
+        "id": 42,
+        "titulo": "Shin Megami Tensei",
+        "anio": 1989,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Atlus",
+        "imagen": "img/shin_megami_tensei.jpg"
+      },
+      {
+        "id": 43,
+        "titulo": "Shin Megami Tensei II",
+        "anio": 1990,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Atlus",
+        "imagen": "img/shin_megami_tensei_ii.jpg"
+      },
+      {
+        "id": 44,
+        "titulo": "Shin Megami Tensei: Devil Children",
+        "anio": 2002,
+        "genero": "RPG",
+        "idioma": "Multi/ES",
+        "desarrollador": "Atlus",
+        "imagen": "img/shin_megami_tensei_devil_children.jpg"
+      },
+      {
+        "id": 45,
+        "titulo": "Bionic Commando",
+        "anio": 1992,
+        "genero": "Acción",
+        "idioma": "Multi/ES",
+        "desarrollador": "Capcom",
+        "imagen": "img/bionic_commando.jpg"
+      },
+      {
+        "id": 46,
+        "titulo": "Contra",
+        "anio": 1991,
+        "genero": "Acción",
+        "idioma": "Multi/ES",
+        "desarrollador": "Konami",
+        "imagen": "img/contra.jpg"
+      },
+      {
+        "id": 47,
+        "titulo": "Operation C",
+        "anio": 1991,
+        "genero": "Acción",
+        "idioma": "Multi/ES",
+        "desarrollador": "Konami",
+        "imagen": "img/operation_c.jpg"
+      },
+      {
+        "id": 48,
+        "titulo": "Asterix",
+        "anio": 1993,
+        "genero": "Plataformas",
+        "idioma": "Multi/ES",
+        "desarrollador": "Infogrames",
+        "imagen": "img/asterix.jpg"
+      },
+      {
+        "id": 49,
+        "titulo": "The Smurfs",
+        "anio": 1993,
+        "genero": "Plataformas",
+        "idioma": "Multi/ES",
+        "desarrollador": "Infogrames",
+        "imagen": "img/the_smurfs.jpg"
+      },
+      {
+        "id": 50,
+        "titulo": "The Smurfs 2",
+        "anio": 1995,
+        "genero": "Plataformas",
+        "idioma": "Multi/ES",
+        "desarrollador": "Infogrames",
+        "imagen": "img/the_smurfs_2.jpg"
+      },
+      {
+        "id": 51,
+        "titulo": "Tiny Toon Adventures: Babs' Big Break",
+        "anio": 1992,
+        "genero": "Plataformas",
+        "idioma": "Multi/ES",
+        "desarrollador": "Konami",
+        "imagen": "img/tiny_toon_adventures_babs_big_break.jpg"
+      },
+      {
+        "id": 52,
+        "titulo": "Tiny Toon Adventures: Wacky Sports",
+        "anio": 1994,
+        "genero": "Deportes",
+        "idioma": "Multi/ES",
+        "desarrollador": "Konami",
+        "imagen": "img/tiny_toon_adventures_wacky_sports.jpg"
+      },
+      {
+        "id": 53,
+        "titulo": "Bart Simpson's Escape from Camp Deadly",
+        "anio": 1991,
+        "genero": "Plataformas",
+        "idioma": "Multi/ES",
+        "desarrollador": "Acclaim",
+        "imagen": "img/bart_simpsons_escape_from_camp_deadly.jpg"
+      },
+      {
+        "id": 54,
+        "titulo": "The Simpsons: Itchy & Scratchy in Miniature Golf Madness",
+        "anio": 1994,
+        "genero": "Golf",
+        "idioma": "Multi/ES",
+        "desarrollador": "Acclaim",
+        "imagen": "img/the_simpsons_itchy_and_scratchy_in_miniature_golf_madness.jpg"
+      },
+      {
+        "id": 55,
+        "titulo": "Jeopardy!",
+        "anio": 1990,
+        "genero": "Trivia",
+        "idioma": "Multi/ES",
+        "desarrollador": "GameTek",
+        "imagen": "img/jeopardy.jpg"
+      },
+      {
+        "id": 56,
+        "titulo": "Wheel of Fortune",
+        "anio": 1990,
+        "genero": "Trivia",
+        "idioma": "Multi/ES",
+        "desarrollador": "GameTek",
+        "imagen": "img/wheel_of_fortune.jpg"
+      },
+      {
+        "id": 57,
+        "titulo": "F1 Racing",
+        "anio": 1990,
+        "genero": "Carreras",
+        "idioma": "Multi/ES",
+        "desarrollador": "Video System",
+        "imagen": "img/f1_racing.jpg"
+      },
+      {
+        "id": 58,
+        "titulo": "R-Type",
+        "anio": 1991,
+        "genero": "Disparos",
+        "idioma": "Multi/ES",
+        "desarrollador": "Irem",
+        "imagen": "img/r_type.jpg"
+      }
     ]
-}
+  }
+
