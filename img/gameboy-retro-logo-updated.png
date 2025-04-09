@@ -1,0 +1,79 @@
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definición de colores que coinciden con el esquema de tu CSS -->
+  <defs>
+    <linearGradient id="neon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#00bfff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#9d00ff" stop-opacity="0.4" />
+    </linearGradient>
+    
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <pattern id="grid-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="none" stroke="#39ff14" stroke-width="0.5" opacity="0.1" />
+    </pattern>
+    
+    <!-- Añadir un patrón de líneas similar al fondo de la página -->
+    <pattern id="pixel-lines" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#0a0a0a" />
+      <line x1="0" y1="10" x2="20" y2="10" stroke="#39ff14" stroke-width="1" opacity="0.05" />
+    </pattern>
+  </defs>
+  
+  <!-- Fondo transparente para que se mezcle con el fondo de la página -->
+  <rect width="600" height="200" fill="transparent" />
+  
+  <!-- Fondo con patrón de líneas similar al de la página -->
+  <rect width="600" height="200" fill="url(#pixel-lines)" opacity="0.7" />
+  
+  <!-- Consola Game Boy - cuerpo principal -->
+  <rect x="80" y="20" width="160" height="160" rx="12" ry="12" fill="#0a0a0a" stroke="#39ff14" stroke-width="3" filter="url(#neon-glow)" />
+  
+  <!-- Pantalla -->
+  <rect x="95" y="35" width="130" height="80" rx="2" ry="2" fill="#000" stroke="#00bfff" stroke-width="2" />
+  
+  <!-- Pixels en la pantalla -->
+  <rect x="105" y="45" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  <rect x="125" y="55" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  <rect x="145" y="65" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  <rect x="165" y="75" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  <rect x="185" y="85" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  <rect x="205" y="45" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  <rect x="185" y="45" width="10" height="10" fill="#39ff14" opacity="0.8" />
+  
+  <!-- Botones circulares A, B -->
+  <circle cx="205" cy="150" r="15" fill="#0a0a0a" stroke="#ff1493" stroke-width="2" />
+  <circle cx="165" cy="150" r="15" fill="#0a0a0a" stroke="#ff1493" stroke-width="2" />
+  <text x="205" y="155" fill="#ff1493" text-anchor="middle" font-family="'Press Start 2P', monospace" font-size="12">A</text>
+  <text x="165" y="155" fill="#ff1493" text-anchor="middle" font-family="'Press Start 2P', monospace" font-size="12">B</text>
+  
+  <!-- Cruz direccional -->
+  <rect x="95" y="140" width="40" height="15" fill="#0a0a0a" stroke="#00bfff" stroke-width="2" />
+  <rect x="107.5" y="127.5" width="15" height="40" fill="#0a0a0a" stroke="#00bfff" stroke-width="2" />
+  
+  <!-- Texto "GAME BOY" con efecto más brillante -->
+  <text x="380" y="80" fill="#39ff14" font-family="'Press Start 2P', monospace" font-size="40" filter="url(#neon-glow)" text-anchor="middle">GAME BOY</text>
+  <text x="380" y="130" fill="#00bfff" font-family="'Press Start 2P', monospace" font-size="28" filter="url(#neon-glow)" text-anchor="middle">GAMES</text>
+  
+  <!-- Efecto de líneas retro mejorado -->
+  <line x1="280" y1="150" x2="480" y2="150" stroke="#39ff14" stroke-width="3" stroke-dasharray="15,5" filter="url(#neon-glow)" />
+  <line x1="280" y1="165" x2="480" y2="165" stroke="#00bfff" stroke-width="3" stroke-dasharray="5,10" filter="url(#neon-glow)" />
+  <line x1="280" y1="180" x2="480" y2="180" stroke="#ff1493" stroke-width="3" stroke-dasharray="10,10" filter="url(#neon-glow)" />
+  
+  <!-- Detalles adicionales: pequeños cartuchos de Game Boy -->
+  <rect x="500" y="50" width="40" height="50" rx="5" ry="5" fill="#111" stroke="#39ff14" stroke-width="1" />
+  <rect x="505" y="55" width="30" height="15" fill="#0a0a0a" stroke="#00bfff" stroke-width="1" />
+  
+  <rect x="500" y="110" width="40" height="50" rx="5" ry="5" fill="#111" stroke="#ff1493" stroke-width="1" />
+  <rect x="505" y="115" width="30" height="15" fill="#0a0a0a" stroke="#9d00ff" stroke-width="1" />
+  
+  <!-- Pequeños detalles pixelados para reforzar el tema -->
+  <rect x="300" y="40" width="5" height="5" fill="#39ff14" opacity="0.8" />
+  <rect x="310" y="35" width="5" height="5" fill="#00bfff" opacity="0.8" />
+  <rect x="320" y="40" width="5" height="5" fill="#ff1493" opacity="0.8" />
+  <rect x="330" y="35" width="5" height="5" fill="#9d00ff" opacity="0.8" />
+  <rect x="340" y="40" width="5" height="5" fill="#39ff14" opacity="0.8" />
+</svg>
