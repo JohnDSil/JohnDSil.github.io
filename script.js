@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
+    // Función para corregir rutas de imágenes (cambiar de "imagenes/" a "img/")
+    function corregirRutaImagen(rutaOriginal) {
+        // Cambiar la carpeta "imagenes" por "img"
+        return rutaOriginal.replace('imagenes/', 'img/');
+    }
+
     // Verificar que todos los elementos existan antes de continuar
     if (!verificarElementos()) return;
 
@@ -49,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!data || !data.juegos || !Array.isArray(data.juegos)) {
                 throw new Error('El formato del archivo JSON no es válido');
             }
+            
+            // Corregir las rutas de imágenes para usar la carpeta "img" en lugar de "imagenes"
+            data.juegos.forEach(juego => {
+                juego.imagen = corregirRutaImagen(juego.imagen);
+            });
+            
             juegosOriginales = data.juegos;
             juegosFiltrados = [...juegosOriginales];
             console.log(`Se cargaron ${juegosOriginales.length} juegos correctamente`);
@@ -185,13 +197,16 @@ document.addEventListener('DOMContentLoaded', () => {
         elementos.generoJuego.textContent = `Género: ${juego.genero}`;
         elementos.idiomaJuego.textContent = `Idioma: ${juego.idioma}`;
         elementos.desarrolladorJuego.textContent = `Desarrollador: ${juego.desarrollador}`;
+        
         // Preparar imagen con fallback en caso de error
         elementos.imagenJuego.alt = juego.titulo;
         elementos.imagenJuego.onerror = function() {
             this.onerror = null; // Evitar bucle infinito
-            this.src = 'data:image/svg+xml;utf8,Imagen no disponible';
+            console.error(`Error al cargar la imagen: ${juego.imagen}`);
+            this.src = 'https://via.placeholder.com/300x200/0a0a0a/39ff14?text=Imagen+no+disponible';
         };
         elementos.imagenJuego.src = juego.imagen;
+        
         // Mostrar la tabla de información con transición suave
         elementos.infoJuego.style.display = 'table';
         elementos.infoJuego.style.width = '100%';
@@ -258,12 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && !elementos.nextBtn.disabled) {
             elementos.nextBtn.click();
         }
-    });
-
-    // Asegurar que la interfaz se mantiene estable en diferentes tamaños de pantalla
-    window.addEventListener('resize', () => {
-        // La tabla ahora es responsiva gracias al CSS mejorado
-        // No necesitamos ajustes específicos aquí
     });
 });
 
