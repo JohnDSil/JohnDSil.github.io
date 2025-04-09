@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Game Boy Games</title>
     <link rel="stylesheet" href="estilo.css">
-    <style>
-        #ficha-juego {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            border: 2px solid var(--neon-pink);
-            background-color: #000;
-            color: var(--electric-blue);
-            box-shadow: 0 0 15px var(--neon-pink);
-        }
-    </style>
+    <!-- Agregar fuente de estilo pixelado para mejor estética retro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <div class="decoracion-retro">
+        <div class="pixel-art"></div>
+        <div class="neon-effect">¡Bienvenido al mundo retro!</div>
+    </div>
+
     <div class="contenedor-central">
+        <!-- Encabezado -->
         <header>
-            <img src="img/gb.png" alt="Game Boy Logo" style="width: 300px; height: auto;">
+            <h1>GAMEBOY Games</h1>
+            <img src="imagenes/gb.gif" alt="Game Boy Logo GIF" class="logo-gameboy">
         </header>
 
-        <!-- Buscador y controles -->
+        <!-- Controles de búsqueda y filtrado -->
         <div class="controles">
-            <input type="text" id="buscador" placeholder="Buscar por título, género o desarrollador...">
+            <input type="text" id="buscador" placeholder="Buscar videojuegos por nombre, año, género, desarrolladora..." autocomplete="off">
             <select id="filas-pagina">
                 <option value="5">5 por página</option>
                 <option value="10" selected>10 por página</option>
@@ -33,170 +36,50 @@
             </select>
         </div>
 
-        <!-- Tabla principal -->
-        <table id="tabla-juegos">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-
-        <!-- Contenedor para la ficha del juego -->
-        <div id="ficha-juego">
-            <h2></h2>
-            <p><strong>Año:</strong> <span id="ficha-anio"></span></p>
-            <p><strong>Género:</strong> <span id="ficha-genero"></span></p>
-            <p><strong>Idioma:</strong> <span id="ficha-idioma"></span></p>
-            <p><strong>Desarrollador:</strong> <span id="ficha-desarrollador"></span></p>
+        <!-- Tabla de videojuegos -->
+        <div class="tabla-contenedor">
+            <table id="tabla-juegos">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contenido dinámico -->
+                </tbody>
+            </table>
         </div>
 
-        <!-- Paginación -->
-        <nav id="paginacion">
-            <button id="prev">&laquo; Anterior</button>
-            <span id="contador-pagina">Página 1 de 1</span>
-            <button id="next">Siguiente &raquo;</button>
-        </nav>
+        <!-- Contenedor para la información del juego -->
+        <table id="info-juego" class="info-juego-tabla">
+            <tr>
+                <td colspan="2" class="info-juego-titulo">
+                    <h2 id="titulo-juego"></h2>
+                </td>
+            </tr>
+            <tr>
+                <td class="info-juego-datos">
+                    <p id="anio-juego"></p>
+                    <p id="genero-juego"></p>
+                    <p id="idioma-juego"></p>
+                    <p id="desarrollador-juego"></p>
+                </td>
+                <td class="info-juego-imagen">
+                    <img id="imagen-juego" src="" alt="Imagen del videojuego">
+                </td>
+            </tr>
+        </table>
+
+        <!-- Controles de paginación -->
+        <div id="paginacion">
+            <button id="prev">« Anterior</button>
+            <span id="contador-pagina"></span>
+            <button id="next">Siguiente »</button>
+        </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let juegosOriginales = [];
-            let juegosFiltrados = [];
-            let paginaActual = 1;
-            let filasPorPagina = 10;
-
-            const elementos = {
-                tabla: document.querySelector('#tabla-juegos tbody'),
-                buscador: document.getElementById('buscador'),
-                filasPagina: document.getElementById('filas-pagina'),
-                paginacion: document.getElementById('paginacion'),
-                prevBtn: document.getElementById('prev'),
-                nextBtn: document.getElementById('next'),
-                contador: document.getElementById('contador-pagina')
-            };
-
-            // Cargar datos iniciales
-            fetch('juegos.json')
-                .then(response => response.json())
-                .then(data => {
-                    juegosOriginales = data.juegos;
-                    juegosFiltrados = [...juegosOriginales];
-                    renderTabla();
-                })
-                .catch(error => console.error('Error al cargar el JSON:', error));
-
-            // Sistema de búsqueda
-            elementos.buscador.addEventListener('input', () => {
-                paginaActual = 1;
-                filtrarJuegos();
-                renderTabla();
-            });
-
-            // Cambiar número de filas
-            elementos.filasPagina.addEventListener('change', (e) => {
-                filasPorPagina = parseInt(e.target.value);
-                paginaActual = 1;
-                renderTabla();
-            });
-
-            // Paginación
-            elementos.prevBtn.addEventListener('click', () => {
-                if(paginaActual > 1) {
-                    paginaActual--;
-                    renderTabla();
-                }
-            });
-
-            elementos.nextBtn.addEventListener('click', () => {
-                if(paginaActual < totalPaginas()) {
-                    paginaActual++;
-                    renderTabla();
-                }
-            });
-
-            // Funciones principales
-            function filtrarJuegos() {
-                const termino = elementos.buscador.value.toLowerCase();
-                juegosFiltrados = juegosOriginales.filter(juego => {
-                    return Object.values(juego).some(valor => 
-                        String(valor).toLowerCase().includes(termino)
-                    );
-                });
-            }
-
-            function renderTabla() {
-                elementos.tabla.innerHTML = '';
-                
-                const inicio = (paginaActual - 1) * filasPorPagina;
-                const fin = filasPorPagina === 0 ? juegosFiltrados.length : inicio + filasPorPagina;
-                const paginados = juegosFiltrados.slice(inicio, fin);
-
-                paginados.forEach(juego => {
-                    const fila = elementos.tabla.insertRow();
-                    fila.style.cursor = 'pointer';
-
-                    const celdaTitulo = fila.insertCell();
-                    celdaTitulo.textContent = juego.titulo;
-
-                    fila.addEventListener('click', () => {
-                        mostrarFichaJuego(juego);
-                    });
-                });
-
-                actualizarPaginacion();
-                aplicarEfectosEspeciales();
-            }
-
-            function actualizarPaginacion() {
-                const totalPag = totalPaginas();
-                elementos.contador.textContent = `Página ${paginaActual} de ${totalPag}`;
-
-                elementos.prevBtn.disabled = paginaActual === 1;
-                elementos.nextBtn.disabled = paginaActual === totalPag;
-
-                elementos.paginacion.style.display = filasPorPagina === 0 ? 'none' : 'flex';
-            }
-
-            function totalPaginas() {
-                return filasPorPagina === 0 ? 1 : Math.ceil(juegosFiltrados.length / filasPorPagina);
-            }
-
-            function aplicarEfectosEspeciales() {
-                const celdas = document.querySelectorAll('#tabla-juegos tbody td');
-            
-                celdas.forEach(celda => {
-                    celda.addEventListener('mouseenter', () => {
-                        celda.style.transition = 'all 0.3s ease';
-                        celda.style.transform = 'scale(1.05)';
-                        celda.style.boxShadow = '0 0 15px var(--neon-pink)';
-                    });
-                    
-                    celda.addEventListener('mouseleave', () => {
-                        celda.style.transform = 'scale(1)';
-                        celda.style.boxShadow = 'none';
-                    });
-                });
-            }
-
-            function mostrarFichaJuego(juego) {
-                const fichaJuego = document.getElementById('ficha-juego');
-                fichaJuego.style.display = 'block';
-
-                fichaJuego.querySelector('h2').textContent = juego.titulo;
-                document.getElementById('ficha-anio').textContent = juego.anio;
-                document.getElementById('ficha-genero').textContent = juego.genero;
-                document.getElementById('ficha-idioma').textContent = juego.idioma;
-                document.getElementById('ficha-desarrollador').textContent = juego.desarrollador;
-            }
-        });
-    </script>
-
-    <!-- Añadir antes del cierre </body> -->
-    <div class="decoracion-retro">
-        <div class="pixel-art"></div>
-        <div class="neon-effect"></div>
-    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
+
