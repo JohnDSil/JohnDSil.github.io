@@ -1,204 +1,310 @@
-/* Centrado principal */
+/* Variables CSS para los colores de estilo retro */
+:root {
+    --lime-green: #39ff14;
+    --neon-pink: #ff1493;
+    --electric-blue: #00bfff;
+    --bright-purple: #9d00ff;
+    --dark-bg: #0a0a0a;
+    --light-glow: rgba(255, 255, 255, 0.1);
+}
 
-, body {
-    height: 100%;
+/* Estilos generales */
+body {
+    background-color: var(--dark-bg);
+    color: var(--electric-blue);
+    font-family: 'Press Start 2P', 'Courier New', monospace;
     margin: 0;
     padding: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     min-height: 100vh;
-    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* Contenedor principal centrado */
-.contenedor-central {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-/* Mantener todos los efectos neon originales */
-:root {
-    --neon-pink: #ff00ff;
-    --electric-blue: #00ffff;
-    --lime-green: #39ff14;
-    --sunset-orange: #ff5e1a;
-    --deep-purple: #6a0dad;
-}
-
-h1 {
-    background: linear-gradient(45deg, var(--neon-pink), var(--electric-blue));
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--electric-blue);
-    text-align: center;
-    margin: 20px 0;
-}
-
-/* Tabla con efectos mejorados */
-#tabla-juegos {
-    width: 100%;
-    background: #000;
-    border: 3px solid var(--lime-green);
-    box-shadow: 0 0 20px var(--lime-green);
-    margin: 20px auto;
-}
-
-th {
-    background: var(--deep-purple);
-    color: var(--lime-green);
-    text-shadow: 0 0 5px #fff;
-    padding: 15px;
-    text-align: center;
-}
-
-td {
-    color: var(--electric-blue);
-    border-color: var(--neon-pink);
-    padding: 12px;
-    text-align: center;
-    position: relative;
-}
-
-tr:hover {
-    background: rgba(255, 0, 255, 0.1) !important;
-    box-shadow: 0 0 15px var(--neon-pink);
-}
-
-/* Efectos especiales mejorados */
+/* Decoraciones de fondo */
 .decoracion-retro {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
     pointer-events: none;
-    z-index: 0;
 }
 
 .pixel-art {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(57, 255, 20, 0.05) 5px, rgba(57, 255, 20, 0.05) 10px);
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 19px,
-            rgba(255, 0, 255, 0.05) 20px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            rgba(0, 255, 255, 0.03),
-            rgba(0, 255, 255, 0.03) 19px,
-            transparent 20px
-        );
-    animation: scanlines 1s infinite linear;
 }
 
 .neon-effect {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(57, 255, 20, 0.1), transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(0, 191, 255, 0.1), transparent 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(
-        circle at 50% 50%,
-        rgba(0, 255, 255, 0.1),
-        transparent 30%
-    );
-    animation: glow 3s alternate infinite;
 }
 
-@keyframes scanlines {
-    from { transform: translateY(0); }
-    to { transform: translateY(-20px); }
+/* Contenedor principal */
+.contenedor-central {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-@keyframes glow {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--lime-green);
+    box-shadow: 0 4px 10px rgba(57, 255, 20, 0.2);
 }
 
-/* Controles centrados con efectos mejorados */
+.logo-gameboy {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Controles */
 .controles {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin: 20px 0;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 #buscador {
-    flex: 1 1 300px;
-    max-width: 500px;
-    background: #000 !important;
-    color: var(--electric-blue) !important;
-    border: 2px solid var(--lime-green) !important;
-    text-shadow: 0 0 5px #fff;
-    padding: 12px;
-    font-size: 16px;
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    background: black;
+    border: 2px solid var(--lime-green);
+    color: var(--electric-blue);
+    font-family: inherit;
+    outline: none;
+    box-shadow: 0 0 5px var(--lime-green);
+    border-radius: 4px;
+}
+
+#buscador:focus {
+    box-shadow: 0 0 15px var(--lime-green);
 }
 
 #filas-pagina {
-    background: var(--deep-purple) !important;
-    color: var(--lime-green) !important;
-    border: 2px solid var(--neon-pink) !important;
     padding: 10px;
+    background: black;
+    border: 2px solid var(--lime-green);
+    color: var(--electric-blue);
+    font-family: inherit;
+    box-shadow: 0 0 5px var(--lime-green);
     cursor: pointer;
+    border-radius: 4px;
 }
 
-/* Paginación centrada con efectos */
-#paginacion {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
-    padding: 15px;
-    background: rgba(102, 0, 153, 0.2);
+/* Tabla con mejor escalado - versión corregida */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    display: block;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
     border-radius: 5px;
 }
 
+#tabla-juegos {
+    width: 100%;
+    background: #000;
+    border: 3px solid var(--lime-green);
+    box-shadow: 0 0 20px var(--lime-green);
+    margin: 15px 0;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 300px;
+    table-layout: fixed;
+}
+
+#tabla-juegos thead {
+    background-color: rgba(57, 255, 20, 0.2);
+}
+
+#tabla-juegos th {
+    padding: 12px;
+    text-align: left;
+    color: var(--lime-green);
+    font-weight: bold;
+    border-bottom: 2px solid var(--lime-green);
+}
+
+#tabla-juegos tbody tr {
+    border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+#tabla-juegos tbody tr:hover {
+    background-color: rgba(57, 255, 20, 0.1);
+    cursor: pointer;
+}
+
+#tabla-juegos tbody tr.seleccionado {
+    background-color: rgba(57, 255, 20, 0.2);
+    box-shadow: inset 0 0 10px var(--lime-green);
+}
+
+.celda-juego {
+    padding: 12px;
+    color: var(--electric-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Información del juego - asegurar que sea independiente de la tabla principal */
+.info-juego-tabla {
+    margin-top: 20px;
+    width: 100%;
+    display: none;
+    background: #000;
+    border: 3px solid var(--lime-green);
+    box-shadow: 0 0 20px var(--lime-green);
+    color: var(--electric-blue);
+    border-radius: 5px;
+    overflow: hidden;
+    table-layout: fixed;
+    position: relative;
+    clear: both;
+}
+
+.info-juego-titulo {
+    background-color: rgba(57, 255, 20, 0.2);
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid var(--lime-green);
+}
+
+.info-juego-titulo h2 {
+    margin: 0;
+    color: var(--lime-green);
+    font-size: 1.5em;
+    text-shadow: 0 0 5px var(--lime-green);
+}
+
+.info-juego-datos {
+    padding: 15px;
+    vertical-align: top;
+    width: 60%;
+}
+
+.info-juego-datos p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.info-juego-imagen {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    width: 40%;
+}
+
+.info-juego-imagen img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--electric-blue);
+    box-shadow: 0 0 10px var(--electric-blue);
+}
+
+/* Paginación */
+#paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid rgba(57, 255, 20, 0.3);
+}
+
 #paginacion button {
-    background: var(--deep-purple) !important;
-    color: var(--lime-green) !important;
-    border: 2px solid var(--neon-pink) !important;
-    padding: 10px 20px;
-    min-width: 100px;
-    text-shadow: 0 0 5px var(--electric-blue);
+    padding: 8px 15px;
+    background: black;
+    border: 2px solid var(--lime-green);
+    color: var(--electric-blue);
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
-#paginacion button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-pink);
+#paginacion button:hover:not(:disabled) {
+    background-color: rgba(57, 255, 20, 0.2);
+    box-shadow: 0 0 10px var(--lime-green);
 }
 
-/* Efectos de hover para celdas */
-td:hover::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: inset 0 0 10px var(--neon-pink);
-    pointer-events: none;
+#paginacion button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: gray;
+}
+
+#contador-pagina {
+    color: var(--electric-blue);
+    font-weight: bold;
+}
+
+/* Mensaje de error */
+.error-mensaje {
+    background-color: rgba(255, 20, 147, 0.2);
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    text-align: center;
+    animation: pulseError 2s infinite;
+}
+
+@keyframes pulseError {
+    0% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 20, 147, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .info-juego-datos, .info-juego-imagen {
+        display: block;
+        width: 100%;
+    }
+
+    .info-juego-tabla tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tabla-juegos th, #tabla-juegos td {
+        padding: 8px;
+    }
+
+    .controles {
+        flex-direction: column;
+    }
 }
 
